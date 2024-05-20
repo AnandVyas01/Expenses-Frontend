@@ -1,0 +1,38 @@
+.link {
+    margin: 2em;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+  }
+  
+  .link li {
+    background-color: #de3163;
+    padding: 0.3em 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    color: #f0f3f4;
+  }
+  
+ .button {
+    background-color: #de3163;
+    padding: 0.3em 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    color: #f0f3f4;
+  }
+  
+  .link a {
+    text-decoration: none;
+    color: #f0f3f4;
+  }
+  
+  .link a.active {
+      color: #FFFF38;
+  }
+  
+  .link li:hover {
+    background-color: #b1274f;
+  }

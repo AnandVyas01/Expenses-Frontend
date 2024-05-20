@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import RootLayout from "./pages/RootLayout";
+import HomePage from "./components/HomePage";
+import AuthenticationPage, {
+  action as authAction,
+} from "./pages/AuthenticationPage";
+import ErrorPage from "./pages/ErrorPage";
 
+import { action as logoutAction } from "./pages/Logout";
+import { tokenLoader } from "./components/Mainnavigation";
+import ExpenseNavigation from "./components/ExpenseNavigation";
+import ExpenseRoot from "./pages/ExpenseRoot";
+import ExpensesPage from "./pages/ExpensesPage";
+import NewExpense from "./pages/NewExpense";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      id: "root",
+      element: <RootLayout />,
+      loader: tokenLoader,
+      errorElement: <ErrorPage />,
+      children: [
+        { index: true, element: <HomePage /> },
+        {
+          path: "auth",
+          element: <AuthenticationPage />,
+          action: authAction,
+        },
+        { path: "logout", action: logoutAction },
+        {
+          path: "expense",
+          id: "expense",
+          element:<ExpenseRoot />,
+          children: [
+            { index: true, element: <ExpensesPage/>  },
+            { path: "list", element: <ExpensesPage /> },
+            { path: "new", element: <NewExpense /> },
+          ],
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={routes} />;
 }
 
 export default App;

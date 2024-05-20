@@ -1,0 +1,49 @@
+.main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inner-container {
+  width: 30vw;
+  padding: 5rem;
+  background-color: #f4f6f7;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+  margin-top: 3rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggler-button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-container input{
+    padding: 0.4em;
+    border-radius: 8px;
+    border-color: rgb(0 0 0 / 20%);
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.error-messsage{
+    padding: 0.5em;
+    
+}
+
+
+.buttons{
+    background-color: #de3163;
+    padding: 0.3em 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    color: #f0f3f4
+}
