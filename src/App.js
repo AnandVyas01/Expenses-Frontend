@@ -37,7 +37,7 @@ function App() {
           element: <ExpenseRoot />,
           children: [
             { index: true, element: <ExpensesPage /> },
-            { path: "list", element: <ExpensesPage /> },
+            { path: "list/:userId", element: <ExpensesPage /> },
             {
               path: "new",
               element: <NewExpense />,

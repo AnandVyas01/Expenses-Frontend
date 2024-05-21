@@ -49,8 +49,9 @@ export function getUserThunk(user) {
 
       const resData = await response.json();
       const userDetails = resData.data;
+      const amount = resData.amount;
 
-      dispatch(setUserData(userDetails));
+      dispatch(setUserData({...userDetails, amount}));
     } catch (error) {
       console.error(
         "An error occured while fetching details => " + error.message
