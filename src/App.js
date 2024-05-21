@@ -12,6 +12,9 @@ import ExpenseNavigation from "./components/ExpenseNavigation";
 import ExpenseRoot from "./pages/ExpenseRoot";
 import ExpensesPage from "./pages/ExpensesPage";
 import NewExpense from "./pages/NewExpense";
+import { action as newExpenseAction } from "./components/ExpenseForn";
+import { checkAuth } from "./utils/authUtil";
+
 function App() {
   const routes = createBrowserRouter([
     {
@@ -31,11 +34,16 @@ function App() {
         {
           path: "expense",
           id: "expense",
-          element:<ExpenseRoot />,
+          element: <ExpenseRoot />,
           children: [
-            { index: true, element: <ExpensesPage/>  },
+            { index: true, element: <ExpensesPage /> },
             { path: "list", element: <ExpensesPage /> },
-            { path: "new", element: <NewExpense /> },
+            {
+              path: "new",
+              element: <NewExpense />,
+              action: newExpenseAction,
+              loader: checkAuth,
+            },
           ],
         },
       ],

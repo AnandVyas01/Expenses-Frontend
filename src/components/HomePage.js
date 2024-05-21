@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthToken } from "../utils/authUtil";
 import classes from "./Homepage.module.css";
-import { setEmail, setUserData } from "../Store/store";
+import { setAmount, setEmail, setUserData } from "../Store/store";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 
 function HomePage() {
@@ -28,7 +28,9 @@ function HomePage() {
     if (!token) {
       dispatch(setEmail(inputValue));
       return navigate("auth?mode=login");
-    }
+    } 
+    dispatch(setAmount(inputValue));
+    return navigate("expense/new");
   };
 
   return (

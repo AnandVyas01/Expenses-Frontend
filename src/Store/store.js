@@ -12,10 +12,13 @@ const userSlice = createSlice({
 
 const getStartedSlice = createSlice({
   name: "getStarted",
-  initialState: { email: null },
+  initialState: { email: null, amount: null },
   reducers: {
     setEmail(state, action) {
       state.email = action.payload;
+    },
+    setAmount(state, action){
+      state.amount = action.payload
     },
   },
 });
@@ -31,7 +34,7 @@ export default store;
 
 export const { setUserData } = userSlice.actions;
 
-export const { setEmail } = getStartedSlice.actions;
+export const { setEmail, setAmount } = getStartedSlice.actions;
 
 export function getUserThunk(user) {
   return async (dispatch) => {
