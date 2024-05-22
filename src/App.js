@@ -8,12 +8,12 @@ import ErrorPage from "./pages/ErrorPage";
 
 import { action as logoutAction } from "./pages/Logout";
 import { tokenLoader } from "./components/Mainnavigation";
-import ExpenseNavigation from "./components/ExpenseNavigation";
 import ExpenseRoot from "./pages/ExpenseRoot";
 import ExpensesPage, { loader as expensesLoader } from "./pages/ExpensesPage";
 import NewExpense from "./pages/NewExpense";
 import { action as newExpenseAction } from "./components/ExpenseForn";
 import { checkAuth } from "./utils/authUtil";
+import { deleteLoader } from "./pages/EventDeletePage";
 
 function App() {
   const routes = createBrowserRouter([
@@ -42,6 +42,11 @@ function App() {
               id: "list",
               element: <ExpensesPage />,
               loader: expensesLoader,
+            },
+            {
+              path: "delete",
+              id: "delete",
+              action: deleteLoader,
             },
             {
               path: "new",
