@@ -1,9 +1,42 @@
 .main-component {
-    height: 70vh;
-    width: 90vw;
-    margin: auto;
-    background-color: rgba(48, 48, 48, 0.349);
-    padding: 2rem;
-    border-radius: 16px;
-    margin-top: 30px;
-  }
+  height: 70vh;
+  width: 90vw;
+  margin: auto;
+  background-color: rgba(48, 48, 48, 0.349);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-top: 30px;
+  overflow-y: scroll;
+}
+
+.main-component::-webkit-scrollbar {
+  display: none;
+}
+
+.main-component table {
+  width: 100%;
+}
+
+.main-component table tr {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.main-component table tr td {
+  color: #ddd;
+  cursor: pointer;
+}
+
+.main-component table tr th {
+  color: #de3163;
+  cursor: pointer;
+}
+
+
+.edit{
+  color: rgb(2, 162, 109) !important;
+}
+
+.delete{
+  color: red !important;
+}

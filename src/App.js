@@ -10,7 +10,7 @@ import { action as logoutAction } from "./pages/Logout";
 import { tokenLoader } from "./components/Mainnavigation";
 import ExpenseNavigation from "./components/ExpenseNavigation";
 import ExpenseRoot from "./pages/ExpenseRoot";
-import ExpensesPage from "./pages/ExpensesPage";
+import ExpensesPage, { loader as expensesLoader } from "./pages/ExpensesPage";
 import NewExpense from "./pages/NewExpense";
 import { action as newExpenseAction } from "./components/ExpenseForn";
 import { checkAuth } from "./utils/authUtil";
@@ -37,7 +37,12 @@ function App() {
           element: <ExpenseRoot />,
           children: [
             { index: true, element: <ExpensesPage /> },
-            { path: "list/:userId", element: <ExpensesPage /> },
+            {
+              path: "list/:userId",
+              id: "list",
+              element: <ExpensesPage />,
+              loader: expensesLoader,
+            },
             {
               path: "new",
               element: <NewExpense />,

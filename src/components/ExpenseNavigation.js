@@ -9,7 +9,7 @@ function ExpenseNavigation() {
     <header>
       <nav className={classes.link}>
         <NavLink
-          to={`list/${userDetails._id}`}
+          to={`list/${userDetails?._id}`}
           className={({ isActive }) => (isActive ? classes.active : undefined)}
         >
           <button className={classes.button}>My Expenses</button>
