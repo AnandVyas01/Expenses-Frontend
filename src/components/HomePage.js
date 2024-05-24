@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthToken } from "../utils/authUtil";
 import classes from "./Homepage.module.css";
 import { setAmount, setEmail, setUserData } from "../Store/store";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
@@ -21,7 +20,7 @@ function HomePage() {
     if (!token) {
       dispatch(setUserData(null));
     }
-  }, [token]);
+  }, [token, dispatch]);
 
   const handleGettingStartedButton = () => {
     const inputValue = inputRef.current.value;

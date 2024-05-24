@@ -8,8 +8,7 @@ import {
 } from "react-router-dom";
 
 import classes from "./Login.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserThunk } from "../Store/store";
+import {  useSelector } from "react-redux";
 
 function Login() {
   //get the data we sent in action
@@ -22,7 +21,11 @@ function Login() {
 
   const isSubmitting = navigation.state === "submitting";
 
-  const [mode, setmode] = useSearchParams();
+/* eslint-disable no-unused-vars */
+const [mode, setmode] = useSearchParams();
+/* eslint-enable no-unused-vars */
+
+//to disable linting errors for unused vars
 
   const isLogin = mode.get("mode") === "login";
 

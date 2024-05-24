@@ -2,13 +2,12 @@ import React from "react";
 import {
   Form,
   NavLink,
-  useLoaderData,
   useRouteLoaderData,
 } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import { getUserThunk } from "../Store/store";
 import { useDispatch } from "react-redux";
-import { getAuthToken, getToken } from "../utils/authUtil";
+import {  getToken } from "../utils/authUtil";
 
 function Mainnavigation() {
   const userEmail = localStorage.getItem("userEmail");

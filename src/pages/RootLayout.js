@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Outlet, useLoaderData, useSubmit } from "react-router-dom";
-import HomePage from "../components/HomePage";
 import Mainnavigation from "../components/Mainnavigation";
 import { getExpirationTime } from "../utils/authUtil";
 
